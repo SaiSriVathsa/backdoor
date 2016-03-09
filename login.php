@@ -20,7 +20,7 @@ if (isset($_POST['submit']))
 		for ($i=0;$i<$n;$i++)
 			echo $row[$i]."       ";
 	};
-	$sql = "UPDATE users SET rand='Doe' WHERE id=1";
+	$sql = "UPDATE users SET rand='$username' WHERE id=1";
 
 if (mysqli_query($con, $sql)) {
     echo "Record updated successfully";
