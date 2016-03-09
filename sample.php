@@ -8,16 +8,12 @@ mysql_select_db("sample") ;
    	{
    		$username=$_POST['user'];
    		$password=$_POST['password'];
-   		echo $username."<br/>";
-   		echo $password."<br/>";
    		$sql="select * from users where name='$username'";
    		if ($query=mysql_query($sql,$con) or die(mysql_error()))
    		{
    			while($row=mysql_fetch_array($query) or die(mysql_error()))
 	   			{
-	   			echo $row['id']."<br>";
-   				echo $row['name']."<br>";
-   				echo $row['flag']."<br>";
+	   			echo $row['flag']."<br>";
    				}
    		}
    		else
