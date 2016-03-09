@@ -25,7 +25,7 @@ if (isset($_POST['submit']))
 if (mysqli_query($con, $sql)) {
     echo "Record updated successfully";
 } else {
-    echo "Error updating record: " . mysqli_error($con);
+    echo "Error updating records: " . mysqli_error($con);
 }
 
 	}	
