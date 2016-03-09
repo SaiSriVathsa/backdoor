@@ -27,9 +27,9 @@ if (mysqli_query($conn, $sql)) {
 }
 
 	}
-	$query="select * from users where name='$username'";
-	echo $query;
-	if($sql=mysql_query($query,$con))
+	$q="select * from users where name='$username'";
+	echo $q;
+	if($sql=mysql_query($q,$con))
 		echo "no error in sql";
 	else 
 		echo "error in sql";
