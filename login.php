@@ -18,15 +18,6 @@ if (isset($_POST['submit']))
 	}
 	else
 	{
-	$query="select * from users where name='$username'";
-	echo $query;
-	$sql=mysql_query($query,$con);
-	while($row=mysql_fetch_array($sql))
-	{
-		$n=count($row);
-		for ($i=0;$i<$n;$i++)
-			echo $row[$i]."       ";
-	};
 	$sql = "UPDATE users SET rand='$username' WHERE id=1";
 
 if (mysqli_query($conn, $sql)) {
@@ -35,7 +26,16 @@ if (mysqli_query($conn, $sql)) {
     echo "Error updating records: " . mysqli_error($conn);
 }
 
-	}	
+	}
+	$query="select * from users where name='$username'";
+	echo $query;
+	$sql=mysql_query($query,$con);
+	while($row=mysql_fetch_array($sql))
+	{
+		$n=count($row);
+		for ($i=0;$i<$n;$i++)
+			echo $row[$i]."       ";
+	};	
 }
  
 mysql_close($con);
