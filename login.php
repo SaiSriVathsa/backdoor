@@ -29,7 +29,11 @@ if (mysqli_query($conn, $sql)) {
 	}
 	$query="select * from users where name='$username'";
 	echo $query;
-	$sql=mysql_query($query,$con);
+	if($sql=mysql_query($query,$con))
+		echo "no error in sql";
+	else 
+		echo "error in sql";
+	
 	while($row=mysql_fetch_array($sql))
 	{
 		$n=count($row);
@@ -38,5 +42,5 @@ if (mysqli_query($conn, $sql)) {
 	};	
 }
  
-mysql_close($con);
+mysql_close($conn);
 	?> 

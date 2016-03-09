@@ -4,14 +4,15 @@ $con=mysql_connect("localhost","root","hello","sample");
    if(! $con ) {
       die('Could not connect: ' . mysql_error());
    }
-   else {
-   	echo "connection successful";
-   }
-   if(isset($_post['submit']))
+   if(isset($_POST['submit']))
    {
-   	$username=$_post['user'];
+   	$username=$_POST['user'];
    	$password=$_POST['password'];
-   	echo $username;
-   	echo $password;
+   	echo $username."<br>";
+   	echo $password."<br>";
+   	$sql="select * from users where name='$username'"
+   	
    }
+   else
+   	echo "problem with submit";
 ?>
